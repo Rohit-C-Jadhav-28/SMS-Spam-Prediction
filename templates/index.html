@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam-SMS-Prediction</title>
+    <style>
+        /* 4F6D7A */
+        body{
+            background-color: #FFFFF0;
+            color: #2C3E50;
+            top: 0;
+        }
+        .SMS-DESC-class{
+            display: none;
+        }
+        .Text-Area{
+            color: #384e63;
+            height: 8rem;
+            width: 25rem;
+        }
+        .btn{
+            background-color: #2C3E50;
+            color: #FFFFF0;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .btn:hover{
+            background-color: #384e63;
+        }
+        .div1{
+            padding: 2px;
+        }
+        .text-div{
+            letter-spacing: 0.05px;
+            text-align: left;
+            /* background-color: #2C3E50; */
+            margin-left:180px ;
+            margin-right:180px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <center>
+            <h1>Spam SMS Fraud Detection</h1>
+        </center>
+
+        <center>
+            <form action="/pred" method="POST">
+                <br>
+                <input type="text" for="SMS-DESC" class="SMS-DESC-class" id="">
+                <textarea name="SMS-DESC" class="Text-Area" placeholder="Enter Text Hear..." required style="color: #384e63;" id=""></textarea>
+                <br>
+                <input class="btn" type="submit" value="Prediuction Time">
+            </form>
+            <br>
+            {%if Pred%}
+            <h3 style="margin-top: 10px;"><b>Prediction Result = {{Pred}}</b></h3>
+            {%endif%}
+        </center>
+        <div class="text-div">
+            <br>
+            <hr>
+            <h3>Model Accuracy...</h3>
+            <p> KNeighborsClassifier Accuracy : 0.9183856502242153</p>
+            <p> LogisticRegressionCV Accuracy : 0.9183856502242153</p>
+            <p> LogisticRegression Accuracy : 0.9802690582959641</p>
+            <p> RandomForestClassifier Accuracy : 0.9551569506726457</p>
+            <p> MultinomialNB Accuracy : 0.9704035874439462</p>
+        </div>
+        
+    </div>
+</body>
+</html>
